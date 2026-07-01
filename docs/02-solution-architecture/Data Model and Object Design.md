@@ -53,6 +53,17 @@ Text Description__c
 }
 ```
 
+## Sprint 1 Model
+
+Account
+|
+Relationship Profile
+|
++----------------+
+| |
+Relationship Context
+Relationship History
+
 ---
 
 # 3. Core Objects
