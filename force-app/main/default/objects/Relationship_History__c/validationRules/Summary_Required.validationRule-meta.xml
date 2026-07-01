@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Summary_Required</fullName>
+    <active>true</active>
+    <description>Summary field is required</description>
+    <errorConditionFormula>ISBLANK(Summary__c)</errorConditionFormula>
+    <errorDisplayField>Summary__c</errorDisplayField>
+    <errorMessage
+  >Please provide a summary for this history event.</errorMessage>
+</ValidationRule>

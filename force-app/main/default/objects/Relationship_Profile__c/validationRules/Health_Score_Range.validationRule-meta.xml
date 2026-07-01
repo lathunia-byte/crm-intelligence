@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Health_Score_Range</fullName>
+    <active>true</active>
+    <description
+  >health score range validation - the range should not be less than 0 and not more than 100.</description>
+    <errorConditionFormula>OR(
+  Health_Score__c &lt; 0,
+  Health_Score__c &gt; 100
+)</errorConditionFormula>
+    <errorDisplayField>Health_Score__c</errorDisplayField>
+    <errorMessage>Health Score must be between 0 and 100.</errorMessage>
+</ValidationRule>
