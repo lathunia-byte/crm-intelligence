@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <brand>
+        <headerColor>#0070D2</headerColor>
+        <shouldOverrideOrgTheme>false</shouldOverrideOrgTheme>
+    </brand>
+    <description
+  >Relationship intelligence and CRM insights application</description>
+    <formFactors>Small</formFactors>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <isOmniPinnedViewEnabled>false</isOmniPinnedViewEnabled>
+    <label>CRM Intelligence</label>
+    <navType>Standard</navType>
+    <tabs>Relationship_Profile__c</tabs>
+    <tabs>Relationship_Context__c</tabs>
+    <tabs>Relationship_History__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>CRM_Intelligence_UtilityBar</utilityBar>
+</CustomApplication>
