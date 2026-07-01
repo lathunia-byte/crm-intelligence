@@ -70,15 +70,60 @@ Relationship History
 
 ## Relationship Profile
 
-Purpose:
+### Purpose
 
-Represents the relationship between Salesforce entities.
+Represents the core business relationship entity within CRM Intelligence.
 
-Example uses:
+The object acts as the foundation for relationship intelligence, contextual enrichment and historical tracking.
 
-- Strategic relationships
-- Customer engagement
-- Stakeholder connections
+---
+
+## API Name
+
+Relationship_Profile__c
+
+---
+
+## Fields
+
+| Field             | Type           | Purpose                             |
+| ----------------- | -------------- | ----------------------------------- |
+| Name              | Text           | Relationship identifier             |
+| Relationship Type | Picklist       | Defines relationship category       |
+| Status            | Picklist       | Current relationship state          |
+| Start Date        | Date           | Relationship start date             |
+| End Date          | Date           | Relationship end date               |
+| Health Score      | Number         | Relationship health indicator       |
+| Notes             | Long Text Area | Additional relationship information |
+
+---
+
+## Relationships
+
+Relationship Profile is the parent entity for:
+
+- Relationship Context
+- Relationship History
+
+---
+
+## Security
+
+Sharing Model:
+
+ReadWrite
+
+Field history tracking enabled for key relationship attributes.
+
+---
+
+## Deployment Notes
+
+Implemented as part of Sprint 1 Data Foundation.
+
+Related ADR:
+
+ADR-011 Relationship Data Model Strategy
 
 ---
 

@@ -63,6 +63,8 @@ All metadata and configuration should be managed through version control.
 
 # 4. High Level Architecture
 
+The Salesforce application architecture uses a relationship-centric data model described in the Application Architecture section.
+
 ```mermaid
 flowchart LR
 
@@ -99,6 +101,41 @@ The solution uses a layered approach:
 | Domain Layer     | Business rules               |
 | Data Layer       | Salesforce objects           |
 | Automation Layer | Flow and platform automation |
+
+### CRM Intelligence Data Model
+
+The CRM Intelligence solution uses a relationship-centric data model to support relationship intelligence, contextual enrichment, historical tracking and future Agentforce capabilities.
+
+Current model:
+
+Account
+|
+Relationship Profile
+|
++----------------+
+| |
+Relationship Context
+Relationship History
+
+#### Relationship Profile
+
+The Relationship Profile object acts as the central relationship entity.
+
+Responsibilities:
+
+- Represents business relationships
+- Stores relationship lifecycle information
+- Provides the foundation for contextual and historical intelligence
+
+#### Relationship Context
+
+Stores additional information and intelligence associated with a relationship.
+
+#### Relationship History
+
+Captures relationship events and changes over time.
+
+The model follows the principles defined in ADR-011 – Relationship Data Model Strategy.
 
 ---
 
@@ -145,3 +182,5 @@ Future roadmap enhancements include:
 - LWC Component Architecture
 - ADR Index
 - Developer Build Specification
+- ADR-011 – Relationship Data Model Strategy
+- Data Model & Object Design
