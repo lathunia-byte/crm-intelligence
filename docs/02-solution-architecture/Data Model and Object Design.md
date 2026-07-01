@@ -134,6 +134,15 @@ ReadWrite
 
 Field history tracking enabled for key relationship attributes.
 
+Relationship Profile acts as the security boundary for relationship intelligence records.
+
+Record access is controlled through the Relationship Profile sharing model.
+
+Child objects inherit access:
+
+- Relationship Context
+- Relationship History
+
 ---
 
 ### Deployment Notes
