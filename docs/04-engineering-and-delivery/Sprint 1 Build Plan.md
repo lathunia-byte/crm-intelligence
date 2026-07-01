@@ -84,7 +84,7 @@ Complete validation of implemented data quality controls.
 
 **Status**
 
-In Progress
+Complete
 
 ---
 
