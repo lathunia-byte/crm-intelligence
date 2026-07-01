@@ -53,6 +53,25 @@ Text Description__c
 }
 ```
 
+## Proposed Logical Model
+
+Account
+│
+└──────────────┐
+│
+Relationship Profile
+│
+┌─────────┴─────────┐
+│ │
+Relationship Context Relationship History
+│
+└───────────────┐
+│
+(Future)
+Agent Observations
+AI Recommendations
+Relationship Signals
+
 ## Sprint 1 Model
 
 Account
