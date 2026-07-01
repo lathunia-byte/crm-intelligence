@@ -313,7 +313,84 @@ Fields should include:
 
 ---
 
-# 6. Automation Considerations
+# 6. Data Quality Rules
+
+## Data Quality Rules
+
+### Purpose
+
+Validation rules are used to enforce business data quality within the CRM Intelligence solution.
+
+The rules prevent incomplete, inconsistent, or invalid relationship data from being saved, regardless of whether records are created manually, through automation, integrations, or future AI-driven processes.
+
+---
+
+## Relationship Profile
+
+### Health Score Validation
+
+**Rule**
+
+Health Score must remain between 0 and 100.
+
+**Purpose**
+
+Ensures relationship health scoring remains consistent and reportable.
+
+---
+
+### Relationship Date Validation
+
+**Rule**
+
+End Date cannot be earlier than Start Date.
+
+**Purpose**
+
+Prevents invalid relationship timelines.
+
+---
+
+## Relationship Context
+
+### High Priority Context Description
+
+**Rule**
+
+High priority context records require a description.
+
+**Purpose**
+
+Ensures important relationship information has sufficient detail.
+
+---
+
+## Relationship History
+
+### Event Summary Required
+
+**Rule**
+
+Every history event must include a summary.
+
+**Purpose**
+
+Ensures timeline records provide meaningful business context.
+
+---
+
+### Event Date Validation
+
+**Rule**
+
+Event Date cannot be in the future.
+
+**Purpose**
+
+Maintains accurate historical records.
+---
+
+# 7. Automation Considerations
 
 Automation should use:
 
@@ -322,7 +399,7 @@ Automation should use:
 
 ---
 
-# 7. Future Enhancements
+# 8. Future Enhancements
 
 Potential extensions:
 
@@ -333,7 +410,7 @@ Potential extensions:
 
 ---
 
-# 8. Related ADRs
+# 9. Related ADRs
 
 - ADR-001 Data Model Strategy
 - ADR-006 Apex Architecture Pattern
