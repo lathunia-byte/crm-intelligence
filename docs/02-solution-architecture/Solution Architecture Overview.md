@@ -102,26 +102,28 @@ The solution uses a layered approach:
 | Data Layer       | Salesforce objects           |
 | Automation Layer | Flow and platform automation |
 
-### CRM Intelligence Data Model
+## CRM Intelligence Data Model
 
 ```
 Account
-   │
+|
 Relationship Profile
-   │
-   ├───────────────┐
-   │               │
-Relationship   Relationship
-Context        History
+|
++----------------+
+|                |
+Relationship  Relationship
+Context       History
 ```
 
-Relationship Profile acts as the central business relationship entity.
+Relationship Profile represents the central relationship entity.
 
-Relationship Context stores supporting business information using a Master-Detail relationship, inheriting security and ownership from the parent.
+Relationship Context stores supporting information about the relationship.
 
-Relationship History provides an auditable timeline of significant events associated with the relationship.
+Relationship History records significant business events over time and provides a chronological relationship timeline.
 
-#### Relationship Profile
+The model supports reporting, operational insight, and future Agentforce capabilities.
+
+### Relationship Profile
 
 The Relationship Profile object acts as the central relationship entity.
 
@@ -131,15 +133,25 @@ Responsibilities:
 - Stores relationship lifecycle information
 - Provides the foundation for contextual and historical intelligence
 
-#### Relationship Context
+### Relationship Context
 
 Stores additional information and intelligence associated with a relationship.
 
-#### Relationship History
+### Relationship History
 
 Captures relationship events and changes over time.
 
 The model follows the principles defined in ADR-011 – Relationship Data Model Strategy.
+
+### User Experience
+
+The CRM Intelligence application provides navigation to:
+
+- Relationship Profiles
+- Relationship Contexts
+- Relationship Histories
+
+Relationship Profile acts as the primary user-facing record with related lists providing access to supporting context and historical events.
 
 ---
 

@@ -215,10 +215,11 @@ After completion of Sprint 2 architecture review.
 
 ## Implementation Notes
 
-Sprint 1 implementation confirmed:
+Sprint 1 confirmed the relationship model:
 
-- Relationship Context implemented using a Master-Detail relationship.
-- Sharing model configured as Controlled by Parent.
-- Context records inherit ownership and record access from Relationship Profile.
+- Relationship Profile acts as the parent relationship entity.
+- Relationship Context provides supporting contextual information.
+- Relationship History provides a business event timeline.
+- Child objects use ControlledByParent security through Master-Detail relationships.
 
-Master-Detail child objects require ControlledByParent as the sharing model.
+The model supports future CRM intelligence and Agentforce scenarios.

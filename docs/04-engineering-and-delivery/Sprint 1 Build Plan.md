@@ -51,10 +51,13 @@ feature/data-foundation
 - Relationship Context fields
 - Relationship History fields
 
-- Object relationships configured
+- Relationship relationships configured
+- CRM Intelligence app created
+- Object navigation configured
+- Relationship History page layout created
 
 ### Remaining
 
-- Security model
+- Security model implementation
 - Validation rules
-- Final documentation review
+- Sprint review

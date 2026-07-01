@@ -97,13 +97,13 @@ The object acts as the foundation for relationship intelligence, contextual enri
 
 ---
 
-## API Name
+### API Name
 
 Relationship_Profile__c
 
 ---
 
-## Fields
+### Fields
 
 | Field             | Type           | Purpose                             |
 | ----------------- | -------------- | ----------------------------------- |
@@ -117,7 +117,7 @@ Relationship_Profile__c
 
 ---
 
-## Relationships
+### Relationships
 
 Relationship Profile is the parent entity for:
 
@@ -126,7 +126,7 @@ Relationship Profile is the parent entity for:
 
 ---
 
-## Security
+### Security
 
 Sharing Model:
 
@@ -136,7 +136,7 @@ Field history tracking enabled for key relationship attributes.
 
 ---
 
-## Deployment Notes
+### Deployment Notes
 
 Implemented as part of Sprint 1 Data Foundation.
 
@@ -200,9 +200,14 @@ Controlled by Parent
 
 ### Purpose
 
-The Relationship History object records significant business events associated with a Relationship Profile.
+The Relationship History object captures significant business events associated with a Relationship Profile.
 
-Unlike Salesforce field history tracking, Relationship History captures meaningful business interactions and milestones, providing a timeline that supports reporting, relationship analysis and future AI-driven insights.
+Relationship History provides a chronological view of relationship activity, supporting operational visibility, reporting, relationship analysis, and future AI-driven insights.
+
+Relationship History is intentionally separate from Salesforce Field History Tracking:
+
+- Field History Tracking captures technical record changes.
+- Relationship History captures meaningful business events.
 
 ---
 
@@ -214,34 +219,64 @@ Relationship_History__c
 
 ### Relationship
 
-Relationship History is a child of Relationship Profile using a Master-Detail relationship.
+Relationship History is a child object of Relationship Profile using a Master-Detail relationship.
 
 Sharing Model:
 
 Controlled by Parent
 
+Relationship Profile controls access to related Relationship History records.
+
 ---
 
 ### Fields
 
-| Field                | Type           | Required | Description                      |
-| -------------------- | -------------- | -------- | -------------------------------- |
-| Name                 | Text           | Yes      | Unique history record name       |
-| Relationship Profile | Master-Detail  | Yes      | Parent relationship              |
-| Event Type           | Picklist       | Yes      | Business event category          |
-| Event Date           | Date/Time      | Yes      | Date and time the event occurred |
-| Summary              | Text           | Yes      | Short description of the event   |
-| Description          | Long Text Area | No       | Detailed notes                   |
-| Source               | Picklist       | No       | Origin of the event              |
+| Field                | Type           | Required | Description                       |
+| -------------------- | -------------- | -------- | --------------------------------- |
+| Name                 | Text           | Yes      | Identifier for the history record |
+| Relationship Profile | Master-Detail  | Yes      | Parent relationship record        |
+| Event Type           | Picklist       | Yes      | Categorises the business event    |
+| Event Date           | Date/Time      | Yes      | Date and time the event occurred  |
+| Summary              | Text           | Yes      | Short event description           |
+| Description          | Long Text Area | No       | Detailed event information        |
+| Source               | Picklist       | No       | Origin of the event               |
+
+---
+
+### Event Type Values
+
+Initial supported values:
+
+- Meeting
+- Call
+- Email
+- Review
+- Risk
+- Opportunity
+- Renewal
+- Escalation
+- Milestone
+- Other
+
+---
+
+### Source Values
+
+Initial supported values:
+
+- Manual
+- Automation
+- Integration
+- Agentforce
 
 ---
 
 ### Design Considerations
 
-- Multiple history records may exist for a single Relationship Profile.
-- Business events are intentionally separate from Salesforce field history tracking.
-- Supports timeline reporting and future Agentforce summarisation.
-- Security inherits from Relationship Profile.
+- Multiple Relationship History records can exist for one Relationship Profile.
+- History records inherit security from Relationship Profile.
+- The model supports relationship timelines and future AI summarisation.
+- Business events are separated from technical audit history.
 
 ---
 
