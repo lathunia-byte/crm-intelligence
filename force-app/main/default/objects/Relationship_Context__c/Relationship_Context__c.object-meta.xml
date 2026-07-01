@@ -12,4 +12,6 @@
 
     <deploymentStatus>Deployed</deploymentStatus>
 
+    <enableHistory>true</enableHistory>
+
 </CustomObject>

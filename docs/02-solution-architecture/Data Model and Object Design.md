@@ -129,15 +129,51 @@ ADR-011 Relationship Data Model Strategy
 
 ## Relationship Context
 
-Purpose:
+### Purpose
 
-Stores supporting intelligence and contextual information.
+The Relationship Context object stores supporting business context for a Relationship Profile.
 
-Examples:
+It provides additional information that enriches the core relationship record without increasing the complexity of the parent object.
 
-- Business priorities
-- Current objectives
-- Relationship notes
+The object is designed to support relationship intelligence, reporting, Agentforce interactions and future AI-driven recommendations.
+
+---
+
+### API Name
+
+Relationship_Context__c
+
+---
+
+### Relationship
+
+Relationship Context is a child of Relationship Profile using a Master-Detail relationship.
+
+Sharing Model:
+
+Controlled by Parent
+
+---
+
+### Fields
+
+| Field                | Type           | Required | Description                        |
+| -------------------- | -------------- | -------- | ---------------------------------- |
+| Name                 | Text           | Yes      | Unique context record name         |
+| Relationship Profile | Master-Detail  | Yes      | Parent relationship                |
+| Context Type         | Picklist       | Yes      | Category of contextual information |
+| Description          | Long Text Area | No       | Detailed contextual information    |
+| Priority             | Picklist       | No       | Business priority                  |
+| Effective Date       | Date           | No       | Date the context becomes effective |
+
+---
+
+### Design Considerations
+
+- Multiple context records may exist for a single Relationship Profile.
+- Security inherits from the parent Relationship Profile.
+- Supports future Agentforce prompts and contextual retrieval.
+- Enables richer reporting without overloading the parent object.
 
 ---
 

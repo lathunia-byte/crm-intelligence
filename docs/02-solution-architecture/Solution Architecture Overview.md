@@ -104,18 +104,22 @@ The solution uses a layered approach:
 
 ### CRM Intelligence Data Model
 
-The CRM Intelligence solution uses a relationship-centric data model to support relationship intelligence, contextual enrichment, historical tracking and future Agentforce capabilities.
-
-Current model:
-
+```
 Account
-|
+   │
 Relationship Profile
-|
-+----------------+
-| |
-Relationship Context
-Relationship History
+   │
+   ├───────────────┐
+   │               │
+Relationship   Relationship
+Context        History
+```
+
+Relationship Profile acts as the central business relationship entity.
+
+Relationship Context stores supporting business information using a Master-Detail relationship, inheriting security and ownership from the parent.
+
+Relationship History provides an auditable timeline of significant events associated with the relationship.
 
 #### Relationship Profile
 
