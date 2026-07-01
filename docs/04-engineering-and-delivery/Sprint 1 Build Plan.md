@@ -56,8 +56,12 @@ feature/data-foundation
 - Object navigation configured
 - Relationship History page layout created
 
+- Security model implemented
+- Permission Set created
+- Field-level security configured
+- Security model validated
+
 ### Remaining
 
-- Security model implementation
 - Validation rules
 - Sprint review
