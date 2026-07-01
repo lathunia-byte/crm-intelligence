@@ -3,6 +3,7 @@
 
     <label>Relationship Context</label>
     <pluralLabel>Relationship Contexts</pluralLabel>
+    <sharingModel>ControlledByParent</sharingModel>
 
     <nameField>
         <label>Relationship Context Name</label>
@@ -10,7 +11,5 @@
     </nameField>
 
     <deploymentStatus>Deployed</deploymentStatus>
-
-    <sharingModel>ReadWrite</sharingModel>
 
 </CustomObject>
