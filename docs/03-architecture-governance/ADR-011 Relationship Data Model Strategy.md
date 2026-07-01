@@ -220,3 +220,5 @@ Sprint 1 implementation confirmed:
 - Relationship Context implemented using a Master-Detail relationship.
 - Sharing model configured as Controlled by Parent.
 - Context records inherit ownership and record access from Relationship Profile.
+
+Master-Detail child objects require ControlledByParent as the sharing model.
