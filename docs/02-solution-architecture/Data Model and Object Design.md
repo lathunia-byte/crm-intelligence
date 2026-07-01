@@ -198,9 +198,50 @@ Controlled by Parent
 
 ## Relationship History
 
-Purpose:
+### Purpose
 
-Maintains historical tracking of relationship changes and interactions.
+The Relationship History object records significant business events associated with a Relationship Profile.
+
+Unlike Salesforce field history tracking, Relationship History captures meaningful business interactions and milestones, providing a timeline that supports reporting, relationship analysis and future AI-driven insights.
+
+---
+
+### API Name
+
+Relationship_History__c
+
+---
+
+### Relationship
+
+Relationship History is a child of Relationship Profile using a Master-Detail relationship.
+
+Sharing Model:
+
+Controlled by Parent
+
+---
+
+### Fields
+
+| Field                | Type           | Required | Description                      |
+| -------------------- | -------------- | -------- | -------------------------------- |
+| Name                 | Text           | Yes      | Unique history record name       |
+| Relationship Profile | Master-Detail  | Yes      | Parent relationship              |
+| Event Type           | Picklist       | Yes      | Business event category          |
+| Event Date           | Date/Time      | Yes      | Date and time the event occurred |
+| Summary              | Text           | Yes      | Short description of the event   |
+| Description          | Long Text Area | No       | Detailed notes                   |
+| Source               | Picklist       | No       | Origin of the event              |
+
+---
+
+### Design Considerations
+
+- Multiple history records may exist for a single Relationship Profile.
+- Business events are intentionally separate from Salesforce field history tracking.
+- Supports timeline reporting and future Agentforce summarisation.
+- Security inherits from Relationship Profile.
 
 ---
 
