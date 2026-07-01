@@ -62,3 +62,11 @@ This avoids separate sharing rules and keeps security aligned with the relations
 - Extend access through Permission Sets rather than profile modification.
 - Protect relationship ownership and parent relationships from unnecessary changes.
 - Keep child records aligned with parent security.
+
+## Field-Level Security Notes
+
+Salesforce-managed fields such as record names and Master-Detail relationship fields cannot be managed as normal editable fields through Permission Sets.
+
+These fields remain controlled by Salesforce to protect record identity, ownership and relationship integrity.
+
+Business fields use Permission Set controlled field-level security.
