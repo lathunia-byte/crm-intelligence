@@ -155,7 +155,44 @@ Relationship Profile acts as the primary user-facing record with related lists p
 
 ---
 
-# 6. Integration Approach
+# 6. Automation Architecture
+
+The CRM Intelligence solution uses Salesforce Flow as the primary automation technology.
+
+Automation is event-driven and operates directly on the CRM Intelligence data model.
+
+The solution uses:
+
+- Record-Triggered Flows
+- Before Save Flows for efficient field updates
+- After Save Flows for related record creation
+- Declarative automation before Apex
+
+Automation supports:
+
+- Relationship lifecycle management
+- Relationship history generation
+- Business process consistency
+- Future AI-assisted workflows
+
+---
+
+# 7. Automation Catalogue
+
+## Planned Automation
+
+| Business Event | Automation | Sprint |
+| --- | --- |
+| Relationship Profile created | Create initial Relationship History entry | Sprint 2 |
+| Relationship Status updated | Record status change in Relationship History | Sprint 2 |
+| Relationship Profile updated | Track significant business changes | Sprint 2 |
+| Relationship Context created | No automation | Future |
+| Relationship closed | Create closure history entry | Sprint 2 |
+| Relationship archived | Future retention process | Future |
+
+---
+
+# 8. Integration Approach
 
 The initial MVP is designed for Salesforce-native capability.
 
@@ -168,7 +205,7 @@ Future integrations may include:
 
 ---
 
-# 7. Deployment Approach
+# 9. Deployment Approach
 
 Deployment will follow:
 
@@ -180,7 +217,7 @@ Deployment will follow:
 
 ---
 
-# 8. Future Considerations
+# 10. Future Considerations
 
 Future roadmap enhancements include:
 
@@ -191,7 +228,7 @@ Future roadmap enhancements include:
 
 ---
 
-# 9. Related Documents
+# 11. Related Documents
 
 - Data Model & Object Design
 - Security & Sharing Model
