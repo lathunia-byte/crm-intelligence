@@ -240,15 +240,15 @@ Relationship Profile controls access to related Relationship History records.
 
 ### Fields
 
-| Field                | Type           | Required | Description                       |
-| -------------------- | -------------- | -------- | --------------------------------- |
-| Name                 | Text           | Yes      | Identifier for the history record |
-| Relationship Profile | Master-Detail  | Yes      | Parent relationship record        |
-| Event Type           | Picklist       | Yes      | Categorises the business event    |
-| Event Date           | Date/Time      | Yes      | Date and time the event occurred  |
-| Summary              | Text           | Yes      | Short event description           |
-| Description          | Long Text Area | No       | Detailed event information        |
-| Source               | Picklist       | No       | Origin of the event               |
+| Field                | Type           | Required | Description                                     |
+| -------------------- | -------------- | -------- | ----------------------------------------------- |
+| Name                 | Text           | Yes      | Short event title (3-5 words)                   |
+| Relationship Profile | Master-Detail  | Yes      | Parent relationship record                      |
+| Event Type           | Picklist       | Yes      | Categorises the business event                  |
+| Event Date           | Date/Time      | Yes      | Date and time the event occurred                |
+| Summary              | Text           | Yes      | One-line business summary (~100-150 characters) |
+| Description          | Long Text Area | No       | Full business narrative                         |
+| Source               | Picklist       | No       | Origin of the event                             |
 
 ---
 
@@ -376,6 +376,10 @@ Every history event must include a summary.
 **Purpose**
 
 Ensures timeline records provide meaningful business context.
+
+**Name Field Usage**
+
+The Name field provides a concise, human-readable title describing the history event. It is intended for use in related lists, reports, search results, and timeline views. Automation, integrations, Agentforce, and manual users should populate this field with a meaningful event title rather than a generated identifier.
 
 ---
 

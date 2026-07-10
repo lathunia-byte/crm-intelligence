@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>67.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <environments>Default</environments>
+    <formulas>
+        <name>fEventType</name>
+        <dataType>String</dataType>
+        <expression>CASE( 
+TEXT( {!$Record.Context_Type__c} ), 
+&apos;Customer Feedback&apos;, &apos;Review&apos;,
+&apos;Stakeholder Change&apos;, &apos;Milestone&apos;,
+&apos;Risk&apos;, &apos;Risk&apos;,
+&apos;Opportunity&apos;, &apos;Opportunity&apos;,
+&apos;Review&apos;, &apos;Review&apos;,
+&apos;Renewal&apos;, &apos;Renewal&apos;,
+&apos;Business Update&apos;, &apos;Other&apos;,
+&apos;Strategic Update&apos;, &apos;Other&apos;,
+&apos;General Note&apos;, &apos;Other&apos;,
+&apos;Other&apos;
+)</expression>
+    </formulas>
+    <formulas>
+        <name>fName</name>
+        <dataType>String</dataType>
+        <expression
+    >TEXT({!$Record.Context_Type__c}) &amp; &apos; Added&apos;</expression>
+    </formulas>
+    <formulas>
+        <name>fSummary</name>
+        <dataType>String</dataType>
+        <expression
+    >&apos;New &apos; &amp; LOWER( TEXT( {!$Record.Context_Type__c} ) ) &amp; &apos; recorded.&apos;</expression>
+    </formulas>
+    <interviewLabel
+  >RTF - Relationship Context - Create History {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>RTF - Relationship Context - Create History</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <name>Create_Relationship_History</name>
+        <label>Create Relationship History</label>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <inputAssignments>
+            <field>Description__c</field>
+            <value>
+                <elementReference>$Record.Description__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Event_Date__c</field>
+            <value>
+                <elementReference>$Record.Effective_Date__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Event_Type__c</field>
+            <value>
+                <elementReference>fEventType</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>fName</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Relationship_Profile__c</field>
+            <value>
+                <elementReference
+        >$Record.Relationship_Profile__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Source__c</field>
+            <value>
+                <stringValue>Automation</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Summary__c</field>
+            <value>
+                <elementReference>fSummary</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Relationship_History__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>0</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Create_Relationship_History</targetReference>
+        </connector>
+        <object>Relationship_Context__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

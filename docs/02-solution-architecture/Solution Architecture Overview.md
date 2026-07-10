@@ -175,6 +175,13 @@ Automation supports:
 - Business process consistency
 - Future AI-assisted workflows
 
+## Implemented Flows
+
+- RTF – Relationship Profile – Status Change
+- RTF – Relationship Context – Create History
+
+NOTE: Event Type mapping is implemented using the CASE Formula function to centralise business logic.
+
 ---
 
 # 7. Automation Catalogue
@@ -183,12 +190,12 @@ Automation supports:
 
 | Business Event | Automation | Sprint |
 | --- | --- |
-| Relationship Profile created | Create initial Relationship History entry | Sprint 2 |
 | Relationship Status updated | Record status change in Relationship History | Sprint 2 |
 | Relationship Profile updated | Track significant business changes | Sprint 2 |
 | Relationship Context created | No automation | Future |
 | Relationship closed | Create closure history entry | Sprint 2 |
 | Relationship archived | Future retention process | Future |
+| Realationship reopened (optional) | Status changes back to Active | Sprint 2 |
 
 ---
 
@@ -237,3 +244,4 @@ Future roadmap enhancements include:
 - Developer Build Specification
 - ADR-011 – Relationship Data Model Strategy
 - Data Model & Object Design
+- Flow Inventory
